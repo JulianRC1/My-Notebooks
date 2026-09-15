@@ -1,0 +1,85 @@
+/* ═══════════════════════════════════════════════════════════
+   Hero Banner  –  image bg + blur + overlay
+   ═══════════════════════════════════════════════════════════ */
+
+.hero-banner {
+  position: relative;
+  overflow: hidden;
+  /* Bottom fade into the page background */
+  padding-bottom: 2.5rem;
+}
+
+/* Layer 1 – the actual image, blurred & dimmed */
+.hero-banner__bg {
+  position: absolute;
+  inset: 0;
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+  /* Blur the image without blurring the content above it */
+  filter: blur(6px) brightness(0.35) saturate(0.7);
+  /* Scale up a bit so blurred edges don't show */
+  transform: scale(1.06);
+  z-index: 0;
+}
+
+/* Layer 2 – dark orange tinted overlay for extra contrast */
+.hero-banner__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 5, 0, 0.55) 0%,
+    rgba(20, 8, 0, 0.72) 60%,
+    rgba(10, 8, 0, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+/* Layer 3 – content sits on top of both layers */
+.hero-banner__content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Hero text ──────────────────────────────────────────── */
+.hero {
+  text-align: center;
+  padding: 4.5rem 2rem 2rem;
+}
+
+.hero__title {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  background: linear-gradient(90deg, #fff 20%, #ffb347 60%, var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 0.75rem;
+  /* Subtle glow so it pops over the blurred bg */
+  filter: drop-shadow(0 0 18px rgba(255, 140, 0, 0.35));
+}
+
+.hero__subtitle {
+  color: #c89060;
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+.footer__content {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255, 140, 0, 0.2);
+}
+
+.footer_sign {
+  text-align: right;
+  color: var(--muted);
+  font-size: 0.6rem;
+}
