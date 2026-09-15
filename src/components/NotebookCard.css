@@ -1,0 +1,136 @@
+/* ── Card container ────────────────────────────────────── */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--card-hover-border);
+  box-shadow: 0 12px 40px rgba(255, 140, 0, 0.18), 0 0 0 1px rgba(255, 140, 0, 0.1);
+}
+
+/* ── Code preview ──────────────────────────────────────── */
+.card__code {
+  position: relative;
+  background: #1e1e2e;
+  border-bottom: 1px solid var(--card-border);
+  max-height: 185px;
+  overflow: hidden;
+}
+
+.card__code-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, #1e1e2e);
+  pointer-events: none;
+}
+
+.card__dot-bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #161625;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot--red    { background: #ff5f56; }
+.dot--yellow { background: #ffbd2e; }
+.dot--green  { background: #27c93f; }
+
+.card__pre {
+  margin: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  font-size: 0.78rem !important;
+  line-height: 1.55 !important;
+}
+
+.card__pre code {
+  border-radius: 0 !important;
+  background: transparent !important;
+  font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace !important;
+}
+
+/* ── Body ──────────────────────────────────────────────── */
+.card__body {
+  padding: 1.1rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.65rem;
+}
+
+.card__title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: #fff;
+  margin: 0;
+}
+
+.card__desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+  flex: 1;
+  margin: 0;
+}
+
+/* ── Tags ──────────────────────────────────────────────── */
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 2px 9px;
+  border-radius: 20px;
+  border: 1px solid rgba(247, 168, 0, 0.25);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ── Button ────────────────────────────────────────────── */
+.btn-colab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  padding: 0.6rem 1.1rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.15s;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-colab:hover {
+  opacity: 0.88;
+  transform: scale(0.98);
+}
