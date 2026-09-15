@@ -1,0 +1,62 @@
+/* ════════════════════════════════════════════════════════════════
+   index.css  –  Global reset, CSS variables & base styles
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Variables ──────────────────────────────────────────── */
+:root {
+  /* Backgrounds – deep blacks matching the image */
+  --bg-from:           #0a0800;
+  --bg-to:             #1a0e00;
+
+  /* Cards */
+  --card-bg:           rgba(255, 140, 0, 0.05);
+  --card-border:       rgba(255, 140, 0, 0.15);
+  --card-hover-border: rgba(255, 140, 0, 0.6);
+
+  /* Accents – orange/amber pulled from the image */
+  --accent:            #ff8c00;
+  --accent2:           #e85d00;
+  --accent-glow:       rgba(255, 140, 0, 0.25);
+
+  /* Text */
+  --text:              #f0e8d8;
+  --muted:             #a08060;
+
+  /* Tags */
+  --tag-bg:            rgba(255, 140, 0, 0.12);
+  --tag-text:          #ffa533;
+
+  --radius:            14px;
+}
+
+/* ── Reset ──────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Base ───────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: linear-gradient(160deg, var(--bg-from) 0%, #0f0900 50%, var(--bg-to) 100%);
+  min-height: 100vh;
+  color: var(--text);
+  background-attachment: fixed;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+img, svg {
+  display: block;
+}
